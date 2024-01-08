@@ -1,5 +1,16 @@
-// This file contains placeholder data that you'll be replacing with real data in the Data Fetching chapter:
-// https://nextjs.org/learn/dashboard-app/fetching-data
+//  This file contains placeholder data that you'll be replacing with real data in the Data Fetching chapter:
+// https://vercel.com/kadirht-hotmailcom/nextjs-dashboard-kk/stores/postgres/store_G3bTxFhelLs0WNGe/data
+
+/* 
+Dashboard Query :
+
+SELECT invoices.amount, customers.name
+FROM invoices
+JOIN customers ON invoices.customer_id = customers.id
+WHERE invoices.amount = 666;
+
+*/
+
 const users = [
   {
     id: '410544b2-4001-4271-9855-fec4b6a6442a',
