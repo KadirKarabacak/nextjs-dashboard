@@ -76,3 +76,12 @@ The **<"Image">** Component is an **extension** of the HTML <"img"> tag, and com
 - Next.js automatically **code splits** your application by route segments. This is different from a **traditional React SPA**, where the browser loads all your application code on initial load. ( **We can change this with lazy import in traditional React SPA** or **React-Router "loader" feature** )
 - Splitting code by routes means that **pages become isolated**. If a certain page throws an **error**, the rest of the application will **still work**.
 - By the time the user **clicks** the link, the code for the destination page will **already be loaded in the background**, and this is what makes the page transition **near-instant**.
+
+#### **Creating new Database with Vercel**
+
+- <a href="https://nextjs.org/learn/dashboard-app/setting-up-your-database#create-a-postgres-database">To create new Database, follow this steps </a>
+- After everything is done, 👉 **npm i @vercel/postgres** run this command.
+
+#### **Seed your Database**
+
+- <a href="https://nextjs.org/learn/dashboard-app/setting-up-your-database#seed-your-database"> To Seed your Database </a>
