@@ -127,9 +127,12 @@ export async function fetchFilteredInvoices(
       LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}
     `;
 
+    if (!invoices)
+      throw new Error('There is no invoice matched with your query.');
+
     return invoices.rows;
-  } catch (error) {
-    console.error('Database Error:', error);
+  } catch (error: any) {
+    console.error(error.message);
     throw new Error('Failed to fetch invoices.');
   }
 }
