@@ -71,11 +71,29 @@ The **<"Image">** Component is an **extension** of the HTML <"img"> tag, and com
 - Splitting code by routes means that **pages become isolated**. If a certain page throws an **error**, the rest of the application will **still work**.
 - By the time the user **clicks** the link, the code for the destination page will **already be loaded in the background**, and this is what makes the page transition **near-instant**.
 
-#### **Creating new Database with Vercel**
+### **Creating new Database with Vercel**
 
 - <a href="https://nextjs.org/learn/dashboard-app/setting-up-your-database#create-a-postgres-database">To create new Database, follow this steps </a>
 - After everything is done, 👉 **npm i @vercel/postgres** run this command.
 
-#### **Seed your Database**
+### **Seed your Database**
 
 - <a href="https://nextjs.org/learn/dashboard-app/setting-up-your-database#seed-your-database"> To Seed your Database </a>
+
+## 👏 **Data Fetching**
+
+- By default, Next.js applications use **React Server Components**. Fetching data with Server Components is a relatively **new approach** and there are a few **benefits** of using them.
+- Server Components **support promises**, providing a simpler solution for asynchronous tasks like data fetching. You can use **async/await** syntax without reaching out for **useEffect, useState** or data fetching libraries.
+- Server Components execute **on the server**, so you can keep expensive data fetches and logic on the server and only send the **result to the client**.
+- **<a href="https://nextjs.org/docs/app/building-your-application/routing/route-handlers"> Route Handlers Request & Response</a>**
+
+## **Using SQL to Queries**
+
+- SQL is the industry standard for querying relational databases.
+- Having a **basic understanding** of SQL can help you understand the fundamentals of relational databases, allowing you to **apply your knowledge to other tools**.
+- SQL is versatile, allowing you to **fetch and manipulate** specific data.
+
+## **What are request waterfalls?**
+
+- A "waterfall" refers to a sequence of network requests **that depend on the completion of previous requests**. In the case of data fetching, each request can only begin once the **previous request has returned** data.
+- A common way to avoid waterfalls is to initiate all data requests at the **same time - in parallel**. **Promise.all or Promise.allSettled( )** forexample.
