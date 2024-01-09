@@ -1,4 +1,6 @@
+// This function allows you to query your database
 import { sql } from '@vercel/postgres';
+
 import {
   CustomerField,
   CustomersTableType,
@@ -22,6 +24,7 @@ export async function fetchRevenue() {
     // await new Promise((resolve) => setTimeout(resolve, 3000));
 
     const data = await sql<Revenue>`SELECT * FROM revenue`;
+    console.log(data);
 
     // console.log('Data fetch completed after 3 seconds.');
 
@@ -34,6 +37,7 @@ export async function fetchRevenue() {
 
 export async function fetchLatestInvoices() {
   try {
+    // Hard to sort in JS if we have lot of data, with SQL its easy.
     const data = await sql<LatestInvoiceRaw>`
       SELECT invoices.amount, customers.name, customers.image_url, customers.email, invoices.id
       FROM invoices
