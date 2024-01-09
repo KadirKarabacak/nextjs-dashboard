@@ -2,20 +2,18 @@
 
 import LatestInvoices from '@/app/ui/dashboard/latest-invoices';
 import RevenueChart from '@/app/ui/dashboard/revenue-chart';
-// import {
-//   fetchCardData,
-// } from '@/app/lib/data';
+import CardWrapper from '@/app/ui/dashboard/cards';
 
 // Use for suspense fetchRevenue
 import { Suspense } from 'react';
+
+// Skeletons
 import {
   LatestInvoicesSkeleton,
   RevenueChartSkeleton,
   CardsSkeleton,
 } from '@/app/ui/skeletons';
 
-// import { Card } from '@/app/ui/dashboard/cards';
-import CardWrapper from '@/app/ui/dashboard/cards';
 import { lusitana } from '@/app/ui/fonts';
 
 // Page is an async component. This allows you to use await to fetch data.
@@ -23,14 +21,6 @@ export default async function Page() {
   // Request waterfall
   // const revenue = await fetchRevenue(); // Deleted to suspense
   // const latestInvoices = await fetchLatestInvoices(); // wait for fetchRevenue()
-
-  // The data requests are unintentionally blocking each other, creating a request waterfall.
-  // const {
-  //   numberOfCustomers,
-  //   numberOfInvoices,
-  //   totalPaidInvoices,
-  //   totalPendingInvoices,
-  // } = await fetchCardData(); // wait for fetchLatestInvoices()
 
   return (
     <main>
