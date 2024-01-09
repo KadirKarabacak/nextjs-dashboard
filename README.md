@@ -191,3 +191,25 @@ The **<"Image">** Component is an **extension** of the HTML <"img"> tag, and com
 - 1 | Trigger Event 👉🏻 When an event that should be debounced (like a keystroke in the search box) occurs, a timer starts.
 - 2 | Wait 👉🏻 If a new event occurs before the timer expires, the timer is reset.
 - 3 | Execution 👉🏻 If the timer reaches the end of its countdown, the debounced function is executed.
+
+## **What are Server Actions ❓**
+
+- React Server Actions allow you to run **asynchronous code directly on the server**. They eliminate the need to create API endpoints to mutate your data.
+- Instead, you write **asynchronous functions that execute on the server** and can be invoked from your **Client or Server** Components.
+- **Security** is a top priority for web applications, as they can be vulnerable to various threats. This is where Server Actions come in.
+- They offer an effective security solution, **protecting against different types of attacks, securing your data, and ensuring authorized access**.
+
+## **Using Forms with Server Actions**
+
+- In React, you can use the **action** attribute in the <"form"> element to invoke actions. The action will automatically receive the **native FormData object**, containing the captured data.
+- An advantage of invoking a **Server Action within a Server Component** is progressive enhancement - forms work even if **JavaScript is disabled** on the client.
+- When a form is **submitted** through a Server Action, not only can you use the **action to mutate data**, but you can also revalidate the associated cache using APIs like **revalidatePath( )** and **revalidateTag( )**.
+- We have **6 steps** to use forms with Server actions.
+- **1 |** we need to **create a new route**, and form.
+- **2 |** we need to create a actions file and say **'use server'** [ Means we mark all the exported functions in the file as server functions ], create new Server-Action and pass it into your form component as an action prop.
+- **2.1 |** We can also write Server-Actions directly **inside Server Components** by adding "use server" inside the action.
+- **3 |** Extract the data from formData <a href="https://nextjs.org/learn/dashboard-app/mutating-data#3-extract-the-data-from-formdata"> Working with FormData</a>
+- **4 |** **Validate and prepare** the data. Before sending the form data to your database, you want to ensure it's in the **correct format and with the correct types**. Never forget forms **returns numbers to strings**. We will use **Zod**, a TypeScript-first validation library that can simplify this task for you. **<a href="https://nextjs.org/learn/dashboard-app/mutating-data#4-validate-and-prepare-the-data"> Validation Schema with Zod </a>**
+- **4.1 |** It's usually good practice to store **monetary values in cents** in your database to eliminate **JavaScript floating-point errors** and ensure greater accuracy.
+- **5 |** Inserting the data into your database. After you have every data you need, create an **SQL query to insert new data** into your database.
+- **6 |** Revalidate and Redirect. On this step, we use **revalidatePath("/dashboard/invoices")** for the refresh database with new data and display it into UI. And we **redirect("/dashboard/invoices")** user to the where new data will be saved.
