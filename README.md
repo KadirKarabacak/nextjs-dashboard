@@ -127,10 +127,17 @@ The **<"Image">** Component is an **extension** of the HTML <"img"> tag, and com
 
 ## **Streaming Components**
 
-- You can stream specific components using React Suspense.
+- You can stream specific components using **React Suspense**.
 - Suspense allows you to defer rendering parts of your application until **some condition is met**.
 - You can **wrap your dynamic components** in Suspense.
-- Then, pass it a fallback component to show **while the dynamic component loads**. ( Loader etc. )
+- Then, pass it a fallback component to show **while the dynamic component loads**. ( Loader etc. ).
+- For a good practice when working with Suspense and data fetching, move data fetches down to the components that need it.
+
+## **Deciding Where to Place your Suspense Boundaries**
+
+- How you want the **user to experience** the page as it streams.
+- What content you want to **prioritize**.
+- If the components rely on **data fetching**.
 
 ## **Loading.tsx file**
 
@@ -144,3 +151,8 @@ The **<"Image">** Component is an **extension** of the HTML <"img"> tag, and com
 
 - Route groups allow you to organize files into logical groups **without affecting the URL path structure**. When you create a new folder using **parentheses ()**, the name won't be included in the URL path.
 - 👉 So **/dashboard/(overview)/page.tsx becomes /dashboard**
+
+## **Grouping Components**
+
+- You can use this pattern when you want multiple components to load in at the same time.
+- <a href="https://nextjs.org/learn/dashboard-app/streaming#grouping-components">Grouping Components in NextJS</a>
