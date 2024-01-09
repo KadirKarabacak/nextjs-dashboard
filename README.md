@@ -156,3 +156,38 @@ The **<"Image">** Component is an **extension** of the HTML <"img"> tag, and com
 
 - You can use this pattern when you want multiple components to load in at the same time.
 - <a href="https://nextjs.org/learn/dashboard-app/streaming#grouping-components">Grouping Components in NextJS</a>
+
+## **Combining Static & Dynamic Content**
+
+- Currently, if you call a dynamic function inside your route ( noStore(), cookies(), etc ), your **entire route becomes dynamic**.
+- You either choose between **static and dynamic** rendering for your **entire application** or for a **specific route**.
+- However, most routes are **not fully** static or dynamic.
+
+## ❔ **What is Partial Prerendering?**
+
+- Next.js 14 contains a preview of Partial Prerendering – an experimental feature that allows you to render a route with a **static loading shell**, while keeping **some parts dynamic**.
+- **<a href="https://nextjs.org/learn/dashboard-app/partial-prerendering#how-does-partial-prerendering-work">How it works?</a>**
+
+## ❔ **Why use URL Search Params**
+
+- There are a couple of **benefits** of implementing search with URL params.
+- **Bookmarkable and Shareable URLs |** Since the search parameters are in the URL, users can **bookmark** the current state of the application, including their search **queries and filters**, for future reference or **sharing**.
+- **Server-Side Rendering and Initial Load |** URL parameters can be directly consumed on the server to **render the initial state**, making it easier to handle server rendering.
+- **Analytics and Tracking |** Having search queries and filters directly in the URL makes it easier to **track user behavior** without requiring additional client-side logic.
+
+## **Adding Search Functionality**
+
+- **useSearchParams( ) ||** Allows you to access the parameters of the current URL.
+- **usePathname( ) ||** Lets you read the current URL's pathname.
+- **useRouter( ) ||** Enables navigation between routes within client components programmatically. **replace( )** method into **useRouter( )** allow us to change URL immediately user searchs.
+- **URLSearchParams( ) ||** Is a Web API that provides utility methods for manipulating the URL query parameters
+- Page components can be accept a prop called **searchParams**.
+
+## ⏲ **Best practice: Debouncing**
+
+- You're updating the URL on every keystroke, and therefore querying your database on every keystroke! This isn't a problem if your application is small, but imagine if your application had thousands of users, each sending a new request to your database on each keystroke.
+- Debouncing is a programming practice that limits the rate at which a function can fire. In our case, you only want to query the database when the user has **stopped typing**.
+- Debouncing working on 3 steps:
+- 1 | Trigger Event 👉🏻 When an event that should be debounced (like a keystroke in the search box) occurs, a timer starts.
+- 2 | Wait 👉🏻 If a new event occurs before the timer expires, the timer is reset.
+- 3 | Execution 👉🏻 If the timer reaches the end of its countdown, the debounced function is executed.
