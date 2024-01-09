@@ -13,10 +13,10 @@ export default function Search({ placeholder }: { placeholder: string }) {
 
   // Handling input field, and use it to update URL
   const handleSearch = useDebouncedCallback((query: string) => {
-    console.log(`Searching... ${query}`);
-
+    // Takes params from URL
     const params = new URLSearchParams(searchParams);
-
+    // Resettin page after every search
+    params.set('page', '1');
     // If there is input, set query=search
     if (query) {
       params.set('query', query);
