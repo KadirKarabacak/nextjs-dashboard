@@ -38,7 +38,7 @@
 
 - Image Optimization is a large topic in web development that could be considered a specialization in itself. Instead of manually implementing these optimizations, you can use the **next/image** component to automatically optimize your images.
 
-## **The <"Image"> component**
+## 🖼 ** <"Image"> component**
 
 The **<"Image">** Component is an **extension** of the HTML <"img"> tag, and comes with automatic image optimization, such as:
 
