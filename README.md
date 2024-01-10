@@ -192,7 +192,7 @@ The **<"Image">** Component is an **extension** of the HTML <"img"> tag, and com
 - 2 | Wait 👉🏻 If a new event occurs before the timer expires, the timer is reset.
 - 3 | Execution 👉🏻 If the timer reaches the end of its countdown, the debounced function is executed.
 
-##  **What are Server Actions ❓**
+## **What are Server Actions ❓**
 
 - React Server Actions allow you to run **asynchronous code directly on the server**. They eliminate the need to create API endpoints to mutate your data.
 - Instead, you write **asynchronous functions that execute on the server** and can be invoked from your **Client or Server** Components.
@@ -225,3 +225,11 @@ The **<"Image">** Component is an **extension** of the HTML <"img"> tag, and com
 
 - We use **UUIDs** instead of incrementing keys (e.g., 1, 2, 3, etc.). This makes the URL longer; however, **UUIDs eliminate the risk** of ID collision, are globally unique, and reduce the risk of enumeration attacks - making them ideal for large databases.
 - However, if you prefer cleaner URLs, you might prefer to use auto-incrementing keys.
+
+## ❌ **Handling Errors**
+
+- Wrapping **SQL statements into try/catch** blocks except revalidate and redirect. Only if try is success then **revalidate and redirect works**.
+- The **error.tsx** file can be used to define a UI boundary for a route segment. It serves as a catch-all for unexpected errors and allows you to display a fallback UI to your users.
+- **<a href="https://nextjs.org/docs/app/api-reference/file-conventions/error"> Error.tsx File Schema </a>**
+- error.tsx needs to be a **Client Component** so **'use client'** top of the file.
+- It accepts two props, **error:** Instance of JS native Error object && **reset:** A function to reset the error boundary, when executed, function try to re-render route.
