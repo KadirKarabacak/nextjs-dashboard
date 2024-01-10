@@ -233,3 +233,27 @@ The **<"Image">** Component is an **extension** of the HTML <"img"> tag, and com
 - **<a href="https://nextjs.org/docs/app/api-reference/file-conventions/error"> Error.tsx File Schema </a>**
 - error.tsx needs to be a **Client Component** so **'use client'** top of the file.
 - It accepts two props, **error:** Instance of JS native Error object && **reset:** A function to reset the error boundary, when executed, function try to re-render route.
+- Another way you can handle errors is by using the **notFound( )** function. While error.tsx is useful for catching all errors, notFound can be used when you try to fetch **a resource that doesn't exist**.
+- To handle errors with **notFound( )** create another file named **not-found.jsx** and create a component which is shown to user.
+- That's something to keep in mind, **notFound will take precedence over error.tsx**, so you can reach out for it when you want to handle more **specific errors**!
+
+## 👨🏻‍💻 **Improving Accessibility**
+
+- First **<a href="https://web.dev/learn/accessibility/"> Web.dev Accessibility Course </a>** you can check later.
+- By default, Next.js includes the **eslint-plugin-jsx-a11y** plugin to help catch accessibility issues early. For example, this plugin warns if you have **images without alt text, use the aria and role attributes incorrectly**, and more.
+- To use that plugin, add as a script **"lint": "next lint"** into package.json file. Then run **npm run lint** in your terminal. And it works!
+
+## 📜 **Improving form accessibility**
+
+- **Semantic HTML |** Using semantic elements ( <"input>, <"option>, etc. ) instead of <"div>. This allows assistive technologies to focus on the input elements and provide appropriate contextual information to the user, making the form easier to navigate and understand.
+- **Labelling |** Including <"label> and the **htmlFor** attribute ensures that each form field has a descriptive text label. This improves AT support by providing context and also enhances usability by allowing users to click on the label to focus on the corresponding input field.
+- **Focus Outline |** The fields are properly styled to show an outline when they are in focus. This is critical for accessibility as it visually indicates the active element on the page, helping both keyboard and screen reader users to understand where they are on the form. You can verify this by pressing tab.
+
+## 🌐 **Client Side & Server Side Form Validation**
+
+- The simplest would be to rely on the form validation provided by the browser by adding the **required** attribute to the **input and select** elements in your forms on Client-Side.
+- By validating forms on the server, you can:
+- Ensure your data is in the **expected format** before sending it to your database.
+- Reduce the risk of malicious users bypassing client-side validation.
+- Have one source of truth for what is considered valid data.
+- Check **actions.ts** file and **create-form.tsx/edit-form.tsx** files to learn how to implement error handling.
