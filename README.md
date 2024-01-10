@@ -214,14 +214,14 @@ The **<"Image">** Component is an **extension** of the HTML <"img"> tag, and com
 - **5 |** Inserting the data into your database. After you have every data you need, create an **SQL query to insert new data** into your database.
 - **6 |** Revalidate and Redirect. On this step, we use **revalidatePath("/dashboard/invoices")** for the refresh database with new data and display it into UI. And we **redirect("/dashboard/invoices")** user to the where new data will be saved.
 
-## **How to handle Dynamic Route Segments**
+## 🔀 **How to handle Dynamic Route Segments**
 
 - When you don't know the exact segment names ahead of time and want to create routes from dynamic data, you can use Dynamic Segments that are filled in at request time or prerendered at build time.
 - <a href="https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes">Check this Page</a> for Dynamic Route Segments.
 - In addition to **searchParams**, page components also accept a prop called **params** which you can use to access the URL params.
 - To mutating data <a href="https://nextjs.org/learn/dashboard-app/mutating-data"> How to Mutate Data </a>
 
-## **UUIDs vs. Auto-incrementing Keys**
+## 🔷 **UUIDs vs. Auto-incrementing Keys**
 
 - We use **UUIDs** instead of incrementing keys (e.g., 1, 2, 3, etc.). This makes the URL longer; however, **UUIDs eliminate the risk** of ID collision, are globally unique, and reduce the risk of enumeration attacks - making them ideal for large databases.
 - However, if you prefer cleaner URLs, you might prefer to use auto-incrementing keys.
