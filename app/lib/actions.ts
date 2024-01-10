@@ -32,14 +32,44 @@ export async function createInvoice(formData: FormData) {
   // Also the date for new invoice
   const date = new Date().toISOString().split('T')[0];
 
+  // Passing variables to SQL query
   await sql`
     INSERT INTO invoices (customer_id, amount, status, date)
     VALUES (${customerId}, ${amountInCents}, ${status}, ${date})
   `;
 
-  // Revalidate does refresh the database after creating the invoice
+  // Revalidating Database and redirecting user
   revalidatePath('/dashboard/invoices');
-
-  // Redirect to invoices page after creating a new invoice
   redirect('/dashboard/invoices');
+}
+
+// Type validation
+const UpdateInvoice = FormSchema.omit({ id: true, date: true });
+export async function updateInvoice(id: string, formData: FormData) {
+  // Same as createInvoice, extracting data from formData
+  const { customerId, amount, status } = UpdateInvoice.parse({
+    customerId: formData.get('customerId'),
+    amount: formData.get('amount'),
+    status: formData.get('status'),
+  });
+
+  // Converting amount into cents
+  const amountInCents = amount * 100;
+
+  // Passing variables to SQL query
+  await sql`
+    UPDATE invoices
+    SET customer_id = ${customerId}, amount = ${amountInCents}, status = ${status}
+    WHERE id = ${id}
+  `;
+
+  // Revalidating Database and redirecting user
+  revalidatePath('/dashboard/invoices');
+  redirect('/dashboard/invoices');
+}
+
+// Deleting invoice already in /dashboard/invoices path, no need redirect
+export async function deleteInvoice(id: string) {
+  await sql`DELETE FROM invoices WHERE id = ${id}`;
+  revalidatePath('/dashboard/invoices');
 }
