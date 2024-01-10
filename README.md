@@ -157,7 +157,7 @@ The **<"Image">** Component is an **extension** of the HTML <"img"> tag, and com
 - You can use this pattern when you want multiple components to load in at the same time.
 - <a href="https://nextjs.org/learn/dashboard-app/streaming#grouping-components">Grouping Components in NextJS</a>
 
-## **Combining Static & Dynamic Content**
+## ↔ **Combining Static & Dynamic Content**
 
 - Currently, if you call a dynamic function inside your route ( noStore(), cookies(), etc ), your **entire route becomes dynamic**.
 - You either choose between **static and dynamic** rendering for your **entire application** or for a **specific route**.
@@ -175,7 +175,7 @@ The **<"Image">** Component is an **extension** of the HTML <"img"> tag, and com
 - **Server-Side Rendering and Initial Load |** URL parameters can be directly consumed on the server to **render the initial state**, making it easier to handle server rendering.
 - **Analytics and Tracking |** Having search queries and filters directly in the URL makes it easier to **track user behavior** without requiring additional client-side logic.
 
-## **Adding Search Functionality**
+## 🔍 **Adding Search Functionality**
 
 - **useSearchParams( ) ||** Allows you to access the parameters of the current URL.
 - **usePathname( ) ||** Lets you read the current URL's pathname.
@@ -192,14 +192,14 @@ The **<"Image">** Component is an **extension** of the HTML <"img"> tag, and com
 - 2 | Wait 👉🏻 If a new event occurs before the timer expires, the timer is reset.
 - 3 | Execution 👉🏻 If the timer reaches the end of its countdown, the debounced function is executed.
 
-## **What are Server Actions ❓**
+##  **What are Server Actions ❓**
 
 - React Server Actions allow you to run **asynchronous code directly on the server**. They eliminate the need to create API endpoints to mutate your data.
 - Instead, you write **asynchronous functions that execute on the server** and can be invoked from your **Client or Server** Components.
 - **Security** is a top priority for web applications, as they can be vulnerable to various threats. This is where Server Actions come in.
 - They offer an effective security solution, **protecting against different types of attacks, securing your data, and ensuring authorized access**.
 
-## **Using Forms with Server Actions**
+## 📜 **Using Forms with Server Actions**
 
 - In React, you can use the **action** attribute in the <"form"> element to invoke actions. The action will automatically receive the **native FormData object**, containing the captured data.
 - An advantage of invoking a **Server Action within a Server Component** is progressive enhancement - forms work even if **JavaScript is disabled** on the client.
