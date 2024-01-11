@@ -4,6 +4,12 @@ import { fetchCustomers, fetchInvoiceById } from '@/app/lib/data';
 
 // To handle searched invoice id is not exist in database
 import { notFound } from 'next/navigation';
+import { Metadata } from 'next';
+
+// Overwriting the global metadata
+export const metadata: Metadata = {
+  title: 'Edit Invoices',
+};
 
 export default async function Page({ params }: { params: { id: string } }) {
   // Reading ID from page params
