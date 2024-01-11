@@ -287,3 +287,12 @@ The **<"Image">** Component is an **extension** of the HTML <"img"> tag, and com
 ## **Password Hashing**
 
 - It's good practice to hash passwords before storing them in a database. Hashing converts a password into a fixed-length string of characters, which appears random, providing a layer of security even if the user's data is exposed.
+
+## **Adding Metadata**
+
+- Metadata is crucial for SEO and shareability.
+- In web development, metadata provides additional details about a webpage. Metadata is **not visible to the users** visiting the page. Instead, it works behind the scenes, embedded within the page's HTML, usually within the < head > element. This hidden information is crucial for **search engines** and other systems that need to understand your webpage's content better.
+- Metadata plays a significant role in enhancing a **webpage's SEO**, making it more **accessible and understandable** for search engines and social media platforms. Proper metadata helps search engines effectively index webpages, improving their **ranking** in search results. Additionally, metadata like **Open Graph** improves the appearance of shared links on social media, making the content more appealing and informative for users.
+- There are two ways you can add metadata to your application
+- **1 |** Config-based - Export a static **metadata** object or a dynamic **generateMetadata( )** function in a layout.js or page.js file.
+- **2 |** File-based - Next.js has a range of **special files** that are specifically used for metadata purposes
