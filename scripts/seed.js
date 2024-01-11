@@ -5,6 +5,8 @@ const {
   revenue,
   users,
 } = require('../app/lib/placeholder-data.js');
+
+// To hash the user's password before storing it in the database
 const bcrypt = require('bcrypt');
 
 async function seedUsers(client) {
