@@ -241,3 +241,9 @@ export async function getUser(email: string) {
     throw new Error('Failed to fetch user.');
   }
 }
+
+import crypto from 'crypto';
+
+// 32 byte uzunluğunda rastgele bir base64 string oluşturma
+// const randomBytes = crypto.randomBytes(32).toString('base64');
+// console.log(randomBytes);
