@@ -242,8 +242,7 @@ export async function getUser(email: string) {
   }
 }
 
-import crypto from 'crypto';
-
+// import crypto from 'crypto';
 // 32 byte uzunluğunda rastgele bir base64 string oluşturma
 // const randomBytes = crypto.randomBytes(32).toString('base64');
 // console.log(randomBytes);
