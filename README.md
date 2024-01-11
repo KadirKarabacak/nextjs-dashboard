@@ -258,19 +258,19 @@ The **<"Image">** Component is an **extension** of the HTML <"img"> tag, and com
 - Have one source of truth for what is considered valid data.
 - Check **actions.ts** file and **create-form.tsx/edit-form.tsx** files to learn how to implement error handling.
 
-## **What is Authentication**
+## 👨‍💻 **What is Authentication**
 
 - Authentication is a key part of many web applications today. It's how a **system checks if the user is who they say they are**.
 - A secure website often uses multiple ways to check a user's identity. For instance, after entering your username and password, the site may send a **verification code to your device** or use an external app like Google Authenticator. **This 2-factor authentication** (2FA) helps increase security. Even if someone learns your password, they can't access your account without your unique token.
 
-## **Authentication vs. Authorization**
+## 🔓 **Authentication vs. Authorization**
 
 - In web development, authentication and authorization serve different roles
 - **Authentication** is about making sure the user is who they say they are. You're proving your identity with something you have like a username and password.
 - **Authorization** is the next step. Once a user's identity is confirmed, authorization decides what parts of the application they are allowed to use.
 - So, **authentication** checks who you are, and **authorization** determines what you can do or access in the application.
 
-## **NextAuth.js**
+## ℹ **NextAuth.js**
 
 - NextAuth.js **abstracts away much of the complexity** involved in managing sessions, sign-in and sign-out, and other aspects of authentication. While you can **manually implement** these features, the process can be **time-consuming and error-prone**. NextAuth.js simplifies the process, providing a unified solution for auth in Next.js applications.
 - To setup 👉 **npm install next-auth@beta**
@@ -279,11 +279,11 @@ The **<"Image">** Component is an **extension** of the HTML <"img"> tag, and com
 - For this Auth, create into Root directory an **auth.config.ts** file. and handle pages like **signIn, signOut or error**.
 - After create another file into root which called **middleware.ts** and import your **authConfig object** into it.
 
-## **Protecting Routes with Next.js Middleware**
+## 🛡 **Protecting Routes with Next.js Middleware**
 
 - Next, add the logic to protect your routes. This will prevent users from accessing the dashboard pages unless **they are logged in**.
 - The advantage of employing **Middleware** for this task is that the protected routes will not even start rendering until the Middleware verifies the authentication, enhancing both the **security and performance** of your application.
 
-## **Password Hashing**
+## 🔑 **Password Hashing**
 
 - It's good practice to hash passwords before storing them in a database. Hashing converts a password into a fixed-length string of characters, which appears random, providing a layer of security even if the user's data is exposed.
