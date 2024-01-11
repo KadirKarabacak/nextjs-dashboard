@@ -15,6 +15,12 @@ import {
 } from '@/app/ui/skeletons';
 
 import { lusitana } from '@/app/ui/fonts';
+import { Metadata } from 'next';
+
+// Overwriting the global metadata
+export const metadata: Metadata = {
+  title: 'Dashboard',
+};
 
 // Page is an async component. This allows you to use await to fetch data.
 export default async function Page() {
